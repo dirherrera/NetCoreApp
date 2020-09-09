@@ -1,0 +1,2 @@
+# NetCoreApp
+Basic startup project
