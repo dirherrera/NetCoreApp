@@ -1,0 +1,24 @@
+﻿@{
+	// HomeController Index
+    ViewData["Title"] = "Home Page";
+}
+<div id="container" style="display: flex;">
+	<div class="card m-auto" style="position:relative; display:flex; width:25em;">
+		<div class="card-body">
+			<p>&nbsp;@ViewBag.message</p>
+			<form id="login" action="/Home/Login" method="post" name="login">
+				<div class="form-group">
+					<label for="username" class="col-form-label">Username</label>
+					<input class="form-control" type="text" id="username" name="username" />
+				</div>
+				<div class="form-group">
+					<label for="password" class="col-form-label">Password</label>
+					<input class="form-control" type="password" id="password" name="password" />
+				</div>
+			</form>
+		</div>
+		<div class="card-footer">
+			<button class="btn btn-primary btn-block" role="button" onclick="document.login.submit();">Login</button>
+		</div>
+	</div>
+</div>
