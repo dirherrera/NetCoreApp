@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NetCoreApp.Models
 {
-	public class User
+	public partial class User
 	{
 		public Guid ID { get; set; }
 		public string Username { get; set; }

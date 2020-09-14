@@ -780,3 +780,4 @@ C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.
 C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\NetCoreApp.dll
 C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\NetCoreApp.pdb
 C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\NetCoreApp.genruntimeconfig.cache
+C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Configuration\Index.cshtml.g.cs
