@@ -11,9 +11,7 @@ namespace NetCoreApp.Controllers
 	{
 		public IActionResult Index()
 		{
-
 			ViewBag.Data = Data.GetDatas();
-
 			return View();
 		}
 
@@ -25,7 +23,7 @@ namespace NetCoreApp.Controllers
 
 		public IActionResult DeleteData(string ID)
 		{
-			Data.DeleteData(ID);
+			//Data.DeleteData(ID);
 			return RedirectToAction("Index", "Configuration", null);
 		}
 
