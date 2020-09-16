@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace NetCoreApp.Models
 {
-	public partial class Data
+	public class Controller
 	{
+
 		public Guid ID { get; set; }
 		public string Name { get; set; }
-		public string Description { get; set; }
+		public Guid Satatus { get; set; }
 
 	}
 }

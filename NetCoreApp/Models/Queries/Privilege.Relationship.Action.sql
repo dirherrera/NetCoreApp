@@ -1,0 +1,4 @@
+CREATE TABLE [PrivilegeAction] (
+	[Privilege] UNIQUEIDENTIFIER NOT NULL,
+	[Action] UNIQUEIDENTIFIER NOT NULL
+)

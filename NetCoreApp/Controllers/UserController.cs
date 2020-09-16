@@ -7,7 +7,7 @@ using NetCoreApp.Security;
 
 namespace NetCoreApp.Controllers
 {
-	public class UserController : Controller, IController
+	public class UserController : Microsoft.AspNetCore.Mvc.Controller, IController
 	{
 		public void Credentials()
 		{

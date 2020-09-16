@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 
 namespace NetCoreApp.Models
 {
-	public partial class Data
+	public class Logs
 	{
+
 		public Guid ID { get; set; }
-		public string Name { get; set; }
-		public string Description { get; set; }
+		public Guid Action { get; set; }
+		public Guid Data { get; set; }
+		public System.DateTime Date { get; set; }
 
 	}
 }

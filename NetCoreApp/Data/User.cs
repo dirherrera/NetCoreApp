@@ -19,5 +19,14 @@ namespace NetCoreApp.Models
 			return Users;
 		}
 
+		public static User Login(string Username, string Password)
+		{
+			User user = new User();
+			string query = $"Select * From [User] Where [Username] = '{Username}' And [Password] = '{Password}'";
+			DataTable table = DataAccess.Fill(query);
+			user = DataTableAdapter.Get<User>(table).First<User>();
+			return user;
+		}
+
 	}
 }

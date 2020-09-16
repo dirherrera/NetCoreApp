@@ -30,5 +30,11 @@ namespace NetCoreApp.Models
 			DataAccess.Exec(query);
 		}
 
+		internal static void UpdateData(string ID, string Name, string Description)
+		{
+			string query = $"Update [Data] Set [Name] = '{Name}', [Description] = '{Description}' WHERE [ID] = '{ID}'";
+			DataAccess.Exec(query);
+		}
+
 	}
 }

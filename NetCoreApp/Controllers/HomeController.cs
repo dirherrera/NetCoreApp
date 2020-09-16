@@ -13,7 +13,7 @@ using NetCoreApp.Security;
 
 namespace NetCoreApp.Controllers
 {
-	public class HomeController : Controller, IController
+	public class HomeController : Microsoft.AspNetCore.Mvc.Controller, IController
 	{
 		private readonly ILogger<HomeController> _logger;
 
@@ -31,16 +31,14 @@ namespace NetCoreApp.Controllers
 				return View();
 		}
 
+		/***
+		 * 
+		 */
 		public IActionResult Login(string username, string password)
 		{
 			//var cookie = HttpContext.Request.Cookies["_"];
 			password = MD5.Encrypt(password);
-			string query = $"Select * from [User] Where [Username] = '{username}' And [Password] = '{password}'";
-			DataTable table = DataAccess.Fill(query);
-			List<User> users = DataTableAdapter.Get<User>(table);
-			User user = new User();
-			if (users.Count > 0)
-				user = users[0];
+			User user = NetCoreApp.Models.User.Login(username, password);
 			Credential.CreateSession(HttpContext, user);
 			if (user != null)
 				return RedirectToAction("Privacy");
