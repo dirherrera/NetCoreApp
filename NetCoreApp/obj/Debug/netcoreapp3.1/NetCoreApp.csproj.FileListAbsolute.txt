@@ -782,3 +782,4 @@ C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.
 C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\NetCoreApp.genruntimeconfig.cache
 C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Configuration\Privileges.cshtml.g.cs
 C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\NetCoreApp.csprojAssemblyReference.cache
+C:\Users\Programador 2\source\repos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CRUD.cshtml.g.cs

@@ -32,7 +32,7 @@ namespace NetCoreApp
 			return list;
 		}
 
-		public static object GetColumnValueSafe<T>(object col)
+		private static object GetColumnValueSafe<T>(object col)
 		{
 			if (col is DBNull)
 			{

@@ -3,3 +3,4 @@
 ################################################################################
 
 /DataBase/App_Data/Database.mdf
+/DataBase/App_Data/Database_log.ldf

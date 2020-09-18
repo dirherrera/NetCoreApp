@@ -1,0 +1,83 @@
+﻿
+
+<div class="container">
+
+	<div>
+		<form id="Add" action="/Configuration/@ViewBag.AddMethod" method="post" class="d-block">
+			<h4>Add @ViewBag.Title</h4>
+			<div class="form-group">
+				<label for="Name">Name</label>
+				<input type="text" id="Name" class="form-control" name="name" />
+			</div>
+			<button class="btn btn-primary">Add</button>
+		</form>
+		<form id="Edit" action="/Configuration/@ViewBag.EditMethod" method="post" class="d-none">
+			<h4>Edit @ViewBag.Title</h4>
+			<input type="hidden" id="ID" name="id" value="" />
+			<div class="form-group">
+				<label for="Name">Name</label>
+				<input type="text" id="Name" class="form-control" name="name" />
+			</div>
+			<button class="btn btn-primary">Edit</button>
+			<button id="cancel" class="btn btn-danger">Cancel</button>
+		</form>
+	</div>
+
+	<hr />
+
+	<h4>@ViewData["Title"]</h4>
+
+	<div>
+		<table class="table table-striped table-bordered table-hover">
+			<thead class="thead-dark">
+				<tr align="center">
+					<th>Name</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var da in ViewBag.Data)
+				{
+					<tr>
+						<td>@da.Name</td>
+						<td align="center">
+							<button type="button" class="edit-data btn btn-primary" onclick="Edit('@da.ID','@da.Name');">
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
+									<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
+								</svg>
+							</button>
+						</td>
+						<td align="center">
+							<button type="button" class="delete-data btn btn-primary" onclick="Delete('@da.ID','@da.Name')">
+								<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"></path>
+									<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"></path>
+								</svg>
+							</button>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		function Edit(ID, Name, Description) {
+			$("#ID").val(ID);
+			$("#Edit #Name").val(Name);
+			$("#Edit").addClass("d-block").removeClass("d-none");
+			$("#Add").addClass("d-none").removeClass("d-block");
+		}
+		$("#cancel").click(function (e) {
+			e.preventDefault();
+			$("#Add").addClass("d-block").removeClass("d-none");
+			$("#Edit").addClass("d-none").removeClass("d-block");
+		});
+		function Delete(ID, Name) {
+			if (confirm(`Delete ${Name}?`)) {
+				window.location = `/Configuration/DeleteData/${ID}`;
+			}
+		}
+	</script>
+</div>

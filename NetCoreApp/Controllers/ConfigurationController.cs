@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using NetCoreApp.Components;
 using NetCoreApp.Models;
 using NetCoreApp.Security;
 
@@ -49,8 +50,10 @@ namespace NetCoreApp.Controllers
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
-
-			ViewBag.Privilege = Privilege.GetPrivileges();
+			List<string> addFields = new List<string>();
+			string inputName = Bootstrap.GetInputTextFormControl("", "", "");
+			addFields.Add(inputName);
+			ViewBag.Data = Privilege.GetPrivileges();
 			return View();
 		}
 
