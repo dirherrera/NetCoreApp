@@ -8,7 +8,7 @@ namespace NetCoreApp.Components
 	public class Component
 	{
 
-		public string component = "";
+		public string Content { get; set; }
 
 	}
 }
