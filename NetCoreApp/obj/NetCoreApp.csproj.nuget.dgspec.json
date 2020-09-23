@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Programador 2\\source\\repos\\NetCoreApp\\NetCoreApp\\NetCoreApp.csproj": {}
+    "C:\\Users\\Programador 2\\Documents\\David Ramos\\Poyectos\\NetCoreApp\\NetCoreApp\\NetCoreApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Programador 2\\source\\repos\\NetCoreApp\\NetCoreApp\\NetCoreApp.csproj": {
+    "C:\\Users\\Programador 2\\Documents\\David Ramos\\Poyectos\\NetCoreApp\\NetCoreApp\\NetCoreApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Programador 2\\source\\repos\\NetCoreApp\\NetCoreApp\\NetCoreApp.csproj",
+        "projectUniqueName": "C:\\Users\\Programador 2\\Documents\\David Ramos\\Poyectos\\NetCoreApp\\NetCoreApp\\NetCoreApp.csproj",
         "projectName": "NetCoreApp",
-        "projectPath": "C:\\Users\\Programador 2\\source\\repos\\NetCoreApp\\NetCoreApp\\NetCoreApp.csproj",
+        "projectPath": "C:\\Users\\Programador 2\\Documents\\David Ramos\\Poyectos\\NetCoreApp\\NetCoreApp\\NetCoreApp.csproj",
         "packagesPath": "C:\\Users\\Programador 2\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Programador 2\\source\\repos\\NetCoreApp\\NetCoreApp\\obj\\",
+        "outputPath": "C:\\Users\\Programador 2\\Documents\\David Ramos\\Poyectos\\NetCoreApp\\NetCoreApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -43,46 +43,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "Microsoft.AspNet.Mvc": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
-              "target": "Package",
-              "version": "[3.1.7, )"
-            },
-            "Microsoft.AspNetCore.SignalR.Core": {
-              "target": "Package",
-              "version": "[1.1.0, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.8, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.1.8, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.1.8, )"
-            },
-            "Microsoft.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[3.1.8, )"
-            },
-            "Newtonsoft.Json": {
-              "target": "Package",
-              "version": "[12.0.3, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.2, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -93,14 +53,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Programador 2\\source\\repos\\NetCoreApp\\NetCoreApi\\NetCoreApi.csproj",
+      "projectUniqueName": "C:\\Users\\Programador 2\\Documents\\David Ramos\\Poyectos\\NetCoreApp\\NetCoreApi\\NetCoreApi.csproj",
       "projectName": "NetCoreApi",
-      "projectPath": "C:\\Users\\Programador 2\\source\\repos\\NetCoreApp\\NetCoreApi\\NetCoreApi.csproj",
+      "projectPath": "C:\\Users\\Programador 2\\Documents\\David Ramos\\Poyectos\\NetCoreApp\\NetCoreApi\\NetCoreApi.csproj",
       "packagesPath": "C:\\Users\\Programador 2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Programador 2\\source\\repos\\NetCoreApp\\NetCoreApi\\obj\\",
+      "outputPath": "C:\\Users\\Programador 2\\Documents\\David Ramos\\Poyectos\\NetCoreApp\\NetCoreApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -60,14 +60,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
