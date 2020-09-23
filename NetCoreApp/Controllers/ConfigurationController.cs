@@ -51,8 +51,8 @@ namespace NetCoreApp.Controllers
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
 			List<string> addFields = new List<string>();
-			string inputName = Bootstrap.GetInputTextFormControl("", "", "");
-			addFields.Add(inputName);
+			//string inputName = Bootstrap.GetInputTextFormControl("", "", "");
+			//addFields.Add(inputName);
 			ViewBag.Data = Privilege.GetPrivileges();
 			return View();
 		}
