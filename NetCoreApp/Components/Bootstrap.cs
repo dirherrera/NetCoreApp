@@ -1,12 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace NetCoreApp.Components
 {
 	public class Bootstrap
 	{
+
+		public static void Convert<T> ()
+		{
+			var model = Activator.CreateInstance<T>();
+			PropertyInfo[] properties = typeof(T).GetProperties();
+			foreach (PropertyInfo property in properties)
+			{
+				string name = property.Name;
+				Type type = property.PropertyType;
+
+			}
+		}
+
+		private static void GetComponent()
+		{
+
+		}
 
 		public static Component GetInputTextFormControl(string id, string label, string name)
 		{

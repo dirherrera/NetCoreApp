@@ -15,11 +15,14 @@ namespace NetCoreApp.Controllers
 		/***
 		 * 
 		 */
+		#region Classes actions
 		public IActionResult Index()
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index","Home",null);
-		
+			ViewBag.AddMethod = "AddData";
+			ViewBag.EditMethod = "EditData";
+			ViewBag.DeleteMethod = "DeleteData";
 			ViewBag.Data = Data.GetDatas();
 			return View();
 		}
@@ -30,9 +33,9 @@ namespace NetCoreApp.Controllers
 			return RedirectToAction("Index", "Configuration", null);
 		}
 
-		public IActionResult EditData(string ID, string Name, string Description)
+		public IActionResult EditData(string id, string name, string description)
 		{
-			Data.UpdateData(ID, Name, Description);
+			Data.UpdateData(id, name, description);
 			return RedirectToAction("Index", "Configuration", null);
 		}
 
@@ -41,19 +44,29 @@ namespace NetCoreApp.Controllers
 			//Data.DeleteData(ID);
 			return RedirectToAction("Index", "Configuration", null);
 		}
+		#endregion
 
 
 		/***
 		 * 
 		 */
+		#region Privileges actions
 		public IActionResult Privileges()
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
-			List<string> addFields = new List<string>();
-			//string inputName = Bootstrap.GetInputTextFormControl("", "", "");
-			//addFields.Add(inputName);
+
+			ViewBag.AddMethod = "AddPrivilege";
+			ViewBag.EditMethod = "EditPrivilege";
+			ViewBag.DeleteMethod = "DeletePrivilege";
+
+			Bootstrap.Convert<Privilege>();
+			//List<Component> addForm = new List<Component>();
+			//Component inputName = Bootstrap.GetInputTextFormControl("name", "Name", "name");
+			//addForm.Add(inputName);
+			
 			ViewBag.Data = Privilege.GetPrivileges();
+			
 			return View();
 		}
 
@@ -74,6 +87,7 @@ namespace NetCoreApp.Controllers
 			Privilege.DeletePrivilege(id);
 			return RedirectToAction("Privileges", "Configuration", null);
 		}
+		#endregion
 
 	}
 }
