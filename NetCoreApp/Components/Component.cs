@@ -10,5 +10,10 @@ namespace NetCoreApp.Components
 
 		public string Content { get; set; }
 
+		public string Render()
+		{
+			return Content;
+		}
+
 	}
 }
