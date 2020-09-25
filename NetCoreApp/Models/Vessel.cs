@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NetCoreApp.Models
 {
-	public partial class Customer
+	public partial class Vessel
 	{
 
 		public Guid ID { get; set; }

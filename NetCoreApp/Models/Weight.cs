@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace NetCoreApp.Models
 {
-	public partial class Customer
+	public partial class Weight
 	{
 
-		public Guid ID { get; set; }
-		public string Name { get; set; }
+		public int metric { get; set; }
+		public int imperial { get; set; }
 
 	}
 }

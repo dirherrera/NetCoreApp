@@ -60,7 +60,7 @@ namespace NetCoreApp.Controllers
 			ViewBag.EditMethod = "EditPrivilege";
 			ViewBag.DeleteMethod = "DeletePrivilege";
 
-			Bootstrap.Convert<Privilege>();
+			//Bootstrap.Convert<Privilege>();
 			//List<Component> addForm = new List<Component>();
 			//Component inputName = Bootstrap.GetInputTextFormControl("name", "Name", "name");
 			//addForm.Add(inputName);

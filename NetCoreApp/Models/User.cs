@@ -7,6 +7,7 @@ namespace NetCoreApp.Models
 {
 	public partial class User
 	{
+
 		public Guid ID { get; set; }
 		public string Username { get; set; }
 		public string Password { get; set; }
@@ -17,5 +18,6 @@ namespace NetCoreApp.Models
 		public DateTime Created { get; set; }
 		public DateTime Modified { get; set; }
 		public Guid Status { get; set; }
+
 	}
 }

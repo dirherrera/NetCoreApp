@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using NetCoreApp.Security;
+using NetCoreApp.Models;
 
 namespace NetCoreApp.Controllers
 {
@@ -18,8 +19,22 @@ namespace NetCoreApp.Controllers
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
-			else
-				return View();
+
+			ViewBag.AddMethod = "AddUser";
+			ViewBag.EditMethod = "EditUser";
+			ViewBag.DeleteMethod = "DeleteUser";
+
+			ViewBag.Data = NetCoreApp.Models.User.GetUsers();
+
+			return View();
 		}
+
+		public IActionResult AddUser(string firstName, string middleName, string lastName, string email)
+		{
+			if (!Credential.IsLoggedIn(HttpContext))
+				return RedirectToAction("Index", "Home", null);
+
+		}
+
 	}
 }
