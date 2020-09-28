@@ -13,7 +13,7 @@ namespace NetCoreApp
 	public class DataAccess
 	{
 		
-		public static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Programador 2\source\repos\NetCoreApp\DataBase\App_Data\Database.mdf"";Integrated Security=True";
+		public static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\DataBase\App_Data\Database.mdf"";Integrated Security=True";
 
 		public static DataTable Fill(string query)
 		{

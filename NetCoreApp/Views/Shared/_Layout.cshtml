@@ -15,36 +15,73 @@
 	<script src="~/js/site.js" asp-append-version="true"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NetCoreApp</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                @if (NetCoreApp.Security.Credential.IsLoggedIn(Context))
-				{<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-					 <ul class="navbar-nav flex-grow-1">
-					 	<li class="nav-item dropdown">
-					 		<a class="dropdown-item" asp-action="Index" asp-controller="User">Users</a>
-					 	</li>
-					 	<li class="nav-item dropdown">
-					 		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					 			Configuration
-					 		</a>
-					 		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					 			<a class="dropdown-item" asp-action="Index" asp-controller="Configuration">Classes</a>
-					 			<a class="dropdown-item" asp-action="Privileges" asp-controller="Configuration">Privileges</a>
-					 		</div>
-					 	</li>
-					 </ul>
-                </div>}
-            </div>
-        </nav>
-    </header>
-    
-    @RenderBody()
-    @RenderSection("Scripts", required: false)
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container">
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NetCoreApp</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>@if (NetCoreApp.Security.Credential.IsLoggedIn(Context)){
+				<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Operations
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" asp-action="Index" asp-controller="DeliveryOrder">Delivery Order</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Reports
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" asp-action="Index" asp-controller="User">Operation Reports</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Catalogs
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" asp-action="Index" asp-controller="Customer">Customers</a>
+								<a class="dropdown-item" asp-action="Index" asp-controller="Vessel">Vessels</a>
+								<a class="dropdown-item" asp-action="Index" asp-controller="Container">Containers</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Configuration
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" asp-action="Index" asp-controller="Configuration">Classes</a>
+								<a class="dropdown-item" asp-action="Privileges" asp-controller="Configuration">Privileges</a>
+								<a class="dropdown-item" asp-action="Index" asp-controller="User">Users</a>
+							</div>
+						</li>
+					</ul>
+				</div>}
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="container-fluid text-center">
+		<div class="row">
+			<div class="col-sm-2 sidenav"></div>
+			<div class="col-sm-8 text-left">
+				@RenderBody()
+			</div>
+			<div class="col-sm-2 sidenav">
+			@if (NetCoreApp.Security.Credential.IsLoggedIn(Context))
+			{
+				<div id="notifications"></div>
+			}
+			</div>
+		</div>
+	</div>
+	@RenderSection("Scripts", required: false)
 </body>
 </html>

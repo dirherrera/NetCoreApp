@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NetCoreApp.Security;
+using NetCoreApp.Hubs;
 
 namespace NetCoreApp
 {
@@ -25,7 +26,7 @@ namespace NetCoreApp
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddControllersWithViews();
-			
+			services.AddSignalR();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +58,7 @@ namespace NetCoreApp
 				endpoints.MapControllerRoute(
 					name: "api",
 					pattern: "api/{controller}/{action=Index}/{id?}");
+				endpoints.MapHub<NotificationsHub>("/NotificationsHub");
 			});
 		}
 	}

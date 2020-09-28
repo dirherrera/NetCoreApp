@@ -1164,7 +1164,6 @@ C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CRUD.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\User\Index.cshtml.g.cs
@@ -1177,3 +1176,10 @@ C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\staticwebassets\NetCoreApp.StaticWebAssets.Manifest.cache
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\staticwebassets\NetCoreApp.StaticWebAssets.xml
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\NetCoreApp.genruntimeconfig.cache
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\DeliveryOrder\Index.cshtml.g.cs
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Index.cshtml.g.cs
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IconDelete.cshtml.g.cs
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_IconEdit.cshtml.g.cs
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Vessel\Index.cshtml.g.cs
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Container\Index.cshtml.g.cs
