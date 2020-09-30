@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,6 +18,8 @@ namespace NetCoreApp
 
 		public static DataTable Fill(string query)
 		{
+			var path = Directory.GetCurrentDirectory().Replace("NetCoreApp\\NetCoreApp\\", "NetCoreApp\\DataBase\\");
+			//connString = connString.Replace("[PATH]", path).Replace(@"\\",@"\");
 			DataTable table;
 			using (SqlConnection conn = new SqlConnection(connString))
 			{

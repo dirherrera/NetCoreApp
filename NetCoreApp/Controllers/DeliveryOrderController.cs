@@ -25,28 +25,30 @@ namespace NetCoreApp.Controllers
 			return View();
 		}
 
-		public IActionResult Add(string name)
+		public IActionResult Add(string reference, string customer, string vessel, string container, string weight, string date, string time)
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
-			Container.Insert(name);
-			return RedirectToAction("Index", "Container", null);
+			
+			
+
+			return RedirectToAction("Index", "DeliveryOrder", null);
 		}
 
-		public IActionResult Edit(string id, string name)
+		public IActionResult Edit(string id, string reference, string customer, string vessel, string container, string weight, string date, string time)
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
-			Container.Update(id, name);
-			return RedirectToAction("Index", "Container", null);
+			
+			return RedirectToAction("Index", "DeliveryOrder", null);
 		}
 
 		public IActionResult Delete(string id)
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
-			Container.Delete(id);
-			return RedirectToAction("Index", "Container", null);
+			
+			return RedirectToAction("Index", "DeliveryOrder", null);
 		}
 
 	}
