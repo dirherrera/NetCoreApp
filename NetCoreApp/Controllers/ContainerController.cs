@@ -12,7 +12,7 @@ namespace NetCoreApp.Controllers
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
 
-			ViewBag.Controller = "Vessel";
+			ViewBag.Controller = "Container";
 			ViewBag.AddMethod = "Add";
 			ViewBag.EditMethod = "Edit";
 			ViewBag.DeleteMethod = "Delete";

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace NetCoreApp.Models
@@ -13,7 +14,7 @@ namespace NetCoreApp.Models
 			return DataTableAdapter.Get<Vessel>(table);
 		}
 
-		public static Vessel Get(string id)
+		public static Vessel Get(Guid id)
 		{
 			string query = $"Select * From [Vessel] Where ID = '{id}'";
 			DataTable table = DataAccess.Fill(query);
@@ -22,11 +23,8 @@ namespace NetCoreApp.Models
 
 		public static void Insert(string name, string code)
 		{
-			if (!Exist(name))
-			{
-				string query = $"Insert Into [Vessel] Values (default, '{name}', '{code}')";
-				DataAccess.Exec(query);
-			}
+			string query = $"Insert Into [Vessel] Values (default, '{name}', '{code}')";
+			DataAccess.Exec(query);
 		}
 
 		public static void Update(string id, string name, string code)
@@ -41,10 +39,10 @@ namespace NetCoreApp.Models
 			DataAccess.Exec(query);
 		}
 
-		public static bool Exist(string name)
+		public static bool Exist(Guid id)
 		{
-			string query = $"Select * From [Vessel] Where Name = '{name}'";
-			return (DataAccess.Exec(query) > 0);
+			string query = $"Select Count(*) From [Vessel] Where ID = '{id}'";
+			return (DataAccess.Find(query) > 0);
 		}
 
 	}

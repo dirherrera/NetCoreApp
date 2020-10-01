@@ -58,7 +58,7 @@ namespace NetCoreApp.Models
 		public static bool Exist(string username)
 		{
 			string query = $"SELECT * FROM [User] WHERE Username = '{username}'";
-			return (DataAccess.Exec(query) > 0);
+			return (DataAccess.Find(query) > 0);
 		}
 
 	}

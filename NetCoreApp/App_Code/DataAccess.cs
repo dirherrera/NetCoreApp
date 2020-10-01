@@ -36,7 +36,20 @@ namespace NetCoreApp
 			return table;
 		}
 
-		public static int Exec(string query)
+		public static void Exec(string query)
+		{
+			using (SqlConnection conn = new SqlConnection(connString))
+			{
+				conn.Open();
+				using (SqlCommand cmd = new SqlCommand(query, conn))
+				{
+					cmd.ExecuteNonQuery();
+				}
+				conn.Close();
+			}
+		}
+
+		public static int Find(string query)
 		{
 			int rows = 0;
 			using (SqlConnection conn = new SqlConnection(connString))
@@ -44,12 +57,12 @@ namespace NetCoreApp
 				conn.Open();
 				using (SqlCommand cmd = new SqlCommand(query, conn))
 				{
-					rows = cmd.ExecuteNonQuery();
+					rows = (int)cmd.ExecuteScalar();
 				}
 				conn.Close();
 			}
 			return rows;
 		}
-
+		
 	}
 }

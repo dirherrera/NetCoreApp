@@ -12,9 +12,9 @@ namespace NetCoreApp.Models
 
 		public Guid ID { get; set; }
 		public string Reference { get; set; }
-		public string Customer { get; set; }
-		public string Vessel { get; set; }
-		public string Container { get; set; }
+		public Guid Customer { get; set; }
+		public Guid Vessel { get; set; }
+		public Guid Container { get; set; }
 		public string Weight { get; set; }
 		public DateTime ArrivalDate { get; set; }
 		public DateTime Created { get; set; }
