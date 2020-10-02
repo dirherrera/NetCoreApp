@@ -30,14 +30,14 @@ namespace NetCoreApp.Models
 			DataAccess.Exec(query);
 		}
 
-		public static void Edit(string id, string reference, string customer, string vessel, string container, string weight, string arrivalDate)
+		public static void Edit(string id, string reference, Guid customer, Guid vessel, Guid container, string weight, string arrivalDate)
 		{
 			string query = $"Update [DeliveryOrder] Set Reference = '{reference}', Customer = '{customer}', Vessel = '{vessel}'," +
 				$" Container = '{container}', Weight = '{weight}', ArrivalDate = '{arrivalDate}' Where ID = '{id}'";
 			DataAccess.Exec(query);
 		}
 
-		public static void Delete(string id)
+		public static void Delete(Guid id)
 		{
 			string query = $"Delete From [DeliveryOrder] Where ID = '{id}'";
 			DataAccess.Exec(query);

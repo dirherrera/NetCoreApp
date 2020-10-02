@@ -17,7 +17,7 @@ namespace NetCoreApp.Controllers
 			ViewBag.EditMethod = "Edit";
 			ViewBag.DeleteMethod = "Delete";
 
-			ViewBag.Data = Container.Get();
+			ViewBag.Data = Location.Get();
 
 			return View();
 		}

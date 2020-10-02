@@ -18,6 +18,7 @@ namespace NetCoreApp.Controllers
 			ViewBag.EditMethod = "Edit";
 			ViewBag.DeleteMethod = "Delete";
 			ViewBag.DeliveryOrder = deliverOrder;
+			ViewBag.Message = (deliverOrder != null) ? "Reference is in use" : "";
 
 			ViewBag.Data = DeliveryOrder.Get();
 			ViewBag.Customers = Customer.Get();
@@ -57,7 +58,7 @@ namespace NetCoreApp.Controllers
 			return RedirectToAction("Index", "DeliveryOrder", null);
 		}
 
-		public IActionResult Edit(string id, string reference, string customer, string vessel, string container, string weight, string arrivalDate, string arrivalTime)
+		public IActionResult Edit(string id, string reference, Guid customer, Guid vessel, Guid container, string weight, string arrivalDate, string arrivalTime)
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
@@ -67,11 +68,13 @@ namespace NetCoreApp.Controllers
 			return RedirectToAction("Index", "DeliveryOrder", null);
 		}
 
-		public IActionResult Delete(string id)
+		public IActionResult Delete(Guid id)
 		{
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
-			
+
+			DeliveryOrder.Delete(id);
+
 			return RedirectToAction("Index", "DeliveryOrder", null);
 		}
 

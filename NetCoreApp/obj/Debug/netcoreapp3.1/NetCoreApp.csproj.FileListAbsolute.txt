@@ -1184,3 +1184,4 @@ C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Vessel\Index.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Container\Index.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Truck\Index.cshtml.g.cs
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Location\Index.cshtml.g.cs
