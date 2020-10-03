@@ -11,5 +11,6 @@ namespace NetCoreApp.Models
 		public Guid ID { get; set; }
 		public Guid State { get; set; }
 		public string Name { get; set; }
+
 	}
 }
