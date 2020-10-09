@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace NetCoreApp.Models
 {
-	public class Country
+	public partial class Country
 	{
 
 		public Guid ID { get; set; }

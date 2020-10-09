@@ -19,6 +19,8 @@ namespace NetCoreApp.Controllers
 			ViewBag.DeleteMethod = "Delete";
 
 			ViewBag.Data = Location.Get();
+			ViewBag.Countries = Country.Get();
+			ViewBag.Cities = City.Get();
 
 			return View();
 		}
