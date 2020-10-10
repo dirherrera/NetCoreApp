@@ -20,9 +20,20 @@ namespace NetCoreApp.Controllers
 
 			ViewBag.Data = Location.Get();
 			ViewBag.Countries = Country.Get();
+			ViewBag.States = State.Get();
 			ViewBag.Cities = City.Get();
 
 			return View();
+		}
+
+		public IActionResult Add(string name, string address, Guid country, Guid state, Guid city, string street, string zipcode)
+		{
+			if (!Credential.IsLoggedIn(HttpContext))
+				return RedirectToAction("Index", "Home", null);
+
+
+
+			return RedirectToAction("Index", "Location", null);
 		}
 
 	}
