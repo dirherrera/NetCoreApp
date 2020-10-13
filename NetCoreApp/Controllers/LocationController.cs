@@ -31,9 +31,31 @@ namespace NetCoreApp.Controllers
 			if (!Credential.IsLoggedIn(HttpContext))
 				return RedirectToAction("Index", "Home", null);
 
-
+			Location.Insert(name, address, country, state, city, street, zipcode);
 
 			return RedirectToAction("Index", "Location", null);
+		}
+
+		public IActionResult Edit(Guid id, string name, string address, Guid country, Guid state, Guid city, string street, string zipcode)
+		{
+			if (!Credential.IsLoggedIn(HttpContext))
+				return RedirectToAction("Index", "Home", null);
+
+			Location.Update(id, name, address, country, state, city, street, zipcode);
+
+			return RedirectToAction("Index", "Location", null);
+
+		}
+
+		public IActionResult Delete(Guid id)
+		{
+			if (!Credential.IsLoggedIn(HttpContext))
+				return RedirectToAction("Index", "Home", null);
+
+			Location.Delete(id);
+
+			return RedirectToAction("Index", "Location", null);
+
 		}
 
 	}

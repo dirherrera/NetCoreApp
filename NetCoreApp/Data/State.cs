@@ -14,13 +14,23 @@ namespace NetCoreApp.Models
 			return DataTableAdapter.Get<State>(table);
 		}
 
-		public static void Insert(string name, string address, Guid country, Guid state, Guid city, string street, string zipcode)
+		public static void Insert(string name, Guid country, string code)
 		{
-			string query = $"Insert Into [State] Values (default, '{name}', '{address}', '{country}', '{state}', '{city}', '{street}', '{zipcode}')";
+			string query = $"Insert Into [State] Values (default, '{name}',  '{country}',  '{code}')";
 			DataAccess.Exec(query);
 		}
 
+		public static void Update(Guid id, string name, Guid country, string code)
+		{
+			string query = $"Update [State] Set Name = '{name}', Country = '{country}', Code = '{code}' Where ID = '{id}'";
+			DataAccess.Exec(query);
+		}
 
+		public static void Delete(Guid id)
+		{
+			string query = $"Delete From [State] Where ID = '{id}'";
+			DataAccess.Exec(query);
+		}
 
 	}
 }
