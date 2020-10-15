@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="form-inline">
+    <button role="button" class="btn btn-primary">Add</button>
+    <div class="input-group col-3">
+        <input type="search" class="form-control" id="search-customer" placeholder="Search customer" />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary">Search</button>
+        </div>
+    </div>
+</div>
+
+<div id="search-result" class="d-none"></div>
+
+<script>
+    $(function () {
+
+        var ajax;
+        $("#search-customer").on("keypress", function () {
+            setTimeout(function () {
+                if (ajax != undefined)
+                    ajax.abort();
+                ajax = $.ajax({
+                    url: "/CustomerRecord/SearchCustomer",
+                    data: `{"term": "${this.value}"}`,
+                    type: "post",
+                    dataType: "json",
+                    contentType: "json/application; charset=utf8",
+                    success: function (data) {
+                        ajax = undefined;
+                        Result(data);
+                    }
+                });
+            }, 1);
+        });
+
+        function Result(data) {
+
+		}
+
+    });
+</script>

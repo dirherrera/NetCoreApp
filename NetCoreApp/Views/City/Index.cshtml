@@ -42,7 +42,12 @@
 
 	<div class="form-group">
 		<label for="state">State</label>
-		<input type="text" id="state" class="form-control" name="state" />
+		<select class="form-control" id="state" name="state">
+			@foreach (State state in ViewBag.States)
+			{
+				<option value="@state.ID">@state.Name</option>
+			}
+		</select>
 	</div>
 
 	<button class="btn btn-primary">Edit</button>
@@ -71,7 +76,7 @@
 			{
 				<tr>
 					<td>@da.Name</td>
-					<td>@da.State</td>
+					<td>@State.Get(da.State).Name</td>
 					<td align="center">
 						<button type="button" class="edit-data btn btn-primary" onclick="Edit('@da.ID','@da.Name');">
 							@Html.Partial("_IconEdit")

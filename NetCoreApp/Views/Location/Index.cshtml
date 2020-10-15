@@ -113,6 +113,7 @@
 				<th>Name</th>
 				<th>Address</th>
 				<th>Country</th>
+				<th>State</th>
 				<th>City</th>
 				<th>Street</th>
 				<th>Zip Code</th>
@@ -126,8 +127,9 @@
 				<tr>
 					<td>@da.Name</td>
 					<td>@da.Address</td>
-					<td>@da.Country</td>
-					<td>@da.City</td>
+					<td>@Country.Get(da.Country).Name</td>
+					<td>@State.Get(da.State).Name</td>
+					<td>@City.Get(da.City).Name</td>
 					<td>@da.Street</td>
 					<td>@da.ZipCode</td>
 					<td align="center">

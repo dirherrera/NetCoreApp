@@ -14,9 +14,16 @@ namespace NetCoreApp.Models
 			return DataTableAdapter.Get<State>(table);
 		}
 
+		public static State Get(Guid id)
+		{
+			string query = $"Select * From [State] Where ID = '{id}'";
+			DataTable table = DataAccess.Fill(query);
+			return DataTableAdapter.Get<State>(table)[0];
+		}
+
 		public static void Insert(string name, Guid country, string code)
 		{
-			string query = $"Insert Into [State] Values (default, '{name}',  '{country}',  '{code}')";
+			string query = $"Insert Into [State] Values (default,  '{country}', '{name}',  '{code}')";
 			DataAccess.Exec(query);
 		}
 
