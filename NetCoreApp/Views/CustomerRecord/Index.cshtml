@@ -1,7 +1,5 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+	ViewData["Title"] = "Customer Record";
 }
 
 <div class="form-inline">
@@ -13,6 +11,7 @@
         </div>
     </div>
 </div>
+<hr />
 
 <div id="search-result" class="d-none"></div>
 
@@ -22,14 +21,14 @@
         var ajax;
         $("#search-customer").on("keypress", function () {
             setTimeout(function () {
+                var term = $("#search-customer").val();
                 if (ajax != undefined)
                     ajax.abort();
                 ajax = $.ajax({
                     url: "/CustomerRecord/SearchCustomer",
-                    data: `{"term": "${this.value}"}`,
+                    data: {term:term},
                     type: "post",
                     dataType: "json",
-                    contentType: "json/application; charset=utf8",
                     success: function (data) {
                         ajax = undefined;
                         Result(data);
@@ -38,8 +37,30 @@
             }, 1);
         });
 
-        function Result(data) {
+		function Result(customers) {
+			$("#search-result").html('');
+			for (i in customers) {
+                CustomerFound(customers[i]);
+			}
+        }
 
+        function CustomerFound(customer) {
+            var html = `
+<a class="customer-found" href="#">
+    <div class="search-item">
+        <span>${customer.Name}</span>
+    </div>
+</a>`;
+            var item = $(html);
+            $("#search-result").append(item).removeClass("d-none");
+            $(item).click(function () {
+                $("#search-result").html('').addClass("d-none");
+                CustomerRecord(customer);
+            });
+        }
+
+        function CustomerRecord(customer) {
+            console.log(customer);
 		}
 
     });
