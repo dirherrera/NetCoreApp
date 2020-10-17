@@ -20,9 +20,9 @@ namespace NetCoreApp.Controllers
 			return View();
 		}
 		
-		public string SearchCustomer(string term)
+		public string SearchCustomer(string q)
 		{
-			string query = $"Select Top 10 * From [Customer] Where Name LIKE '{term}%'";
+			string query = $"Select Top 10 * From [Customer] Where Name LIKE '{q}%'";
 			DataTable table = DataAccess.Fill(query);
 			List<Customer> customers = DataTableAdapter.Get<Customer>(table);
 

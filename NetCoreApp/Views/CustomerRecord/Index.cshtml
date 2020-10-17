@@ -13,55 +13,18 @@
 </div>
 <hr />
 
-<div id="search-result" class="d-none"></div>
+<div id="search-result" class="list-box"></div>
 
 <script>
     $(function () {
 
         var ajax;
-        $("#search-customer").on("keypress", function () {
-            setTimeout(function () {
-                var term = $("#search-customer").val();
-                if (ajax != undefined)
-                    ajax.abort();
-                ajax = $.ajax({
-                    url: "/CustomerRecord/SearchCustomer",
-                    data: {term:term},
-                    type: "post",
-                    dataType: "json",
-                    success: function (data) {
-                        ajax = undefined;
-                        Result(data);
-                    }
-                });
-            }, 1);
-        });
-
-		function Result(customers) {
-			$("#search-result").html('');
-			for (i in customers) {
-                CustomerFound(customers[i]);
+		$("#search-customer").autocomplete({
+			source: '/CustomerRecord/SearchCustomer',
+            formatResult: function (item) {
+                console.log(item);
 			}
-        }
-
-        function CustomerFound(customer) {
-            var html = `
-<a class="customer-found" href="#">
-    <div class="search-item">
-        <span>${customer.Name}</span>
-    </div>
-</a>`;
-            var item = $(html);
-            $("#search-result").append(item).removeClass("d-none");
-            $(item).click(function () {
-                $("#search-result").html('').addClass("d-none");
-                CustomerRecord(customer);
-            });
-        }
-
-        function CustomerRecord(customer) {
-            console.log(customer);
-		}
+		});
 
     });
 </script>

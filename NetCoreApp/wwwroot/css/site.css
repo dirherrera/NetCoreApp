@@ -114,3 +114,14 @@ body {
     background-color: DodgerBlue !important;
     color: #ffffff;
 }
+
+/*list box*/
+.list-box{
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    width: 255px;
+    top: 40px;
+    left: 85px;
+}
