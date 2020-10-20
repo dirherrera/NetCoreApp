@@ -11,20 +11,29 @@
         </div>
     </div>
 </div>
+
 <hr />
 
-<div id="search-result" class="list-box"></div>
-
 <script>
+
     $(function () {
 
-        var ajax;
-		$("#search-customer").autocomplete({
-			source: '/CustomerRecord/SearchCustomer',
-            formatResult: function (item) {
+		$("#search-customer").typeahead({
+            ajax: '/CustomerRecord/SearchCustomer',
+            displayField: "Name",
+            valueField: "ID",
+            onSelect: function (item) {
                 console.log(item);
 			}
 		});
 
     });
+
+    function CustomerRecord(id) {
+        $.ajax({
+            url: "",
+            type: ""
+        });
+	}
+
 </script>
