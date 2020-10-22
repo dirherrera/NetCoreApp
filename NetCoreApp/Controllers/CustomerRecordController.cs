@@ -22,10 +22,7 @@ namespace NetCoreApp.Controllers
 		
 		public string SearchCustomer(string query)
 		{
-			string squery = $"Select Top 10 * From [Customer] Where Name LIKE '%{query}%'";
-			DataTable table = DataAccess.Fill(squery);
-			List<Customer> customers = DataTableAdapter.Get<Customer>(table);
-
+			List<Customer> customers = Customer.Like(query);
 			return JsonSerializer.Serialize(customers);
 		}
 

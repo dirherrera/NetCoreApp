@@ -21,6 +21,14 @@ namespace NetCoreApp.Models
 			return DataTableAdapter.Get<Customer>(table)[0];
 		}
 
+		public static List<Customer> Like(string like)
+		{
+			string squery = $"Select Top 10 * From [Customer] Where Name LIKE '%{like}%'";
+			DataTable table = DataAccess.Fill(squery);
+			List<Customer> customers = DataTableAdapter.Get<Customer>(table);
+			return customers;
+		}
+
 		public static void Insert(string name)
 		{
 			string query = $"Insert Into [Customer] Values (default, '{name}')";
