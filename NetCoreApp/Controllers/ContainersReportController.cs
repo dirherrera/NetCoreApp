@@ -13,6 +13,7 @@ namespace NetCoreApp.Controllers
 				return RedirectToAction("Index", "Home", null);
 
 
+
 			return View();
 		}
 	}
