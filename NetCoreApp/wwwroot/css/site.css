@@ -125,3 +125,12 @@ body {
     top: 40px;
     left: 85px;
 }
+
+input[type=text]::-webkit-input-placeholder{
+    font-size: 14px;
+    color: #999;
+}
+
+.table{
+    background-color: white;
+}

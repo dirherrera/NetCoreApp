@@ -9,80 +9,109 @@
 	<form id="add" action="/DeliveryOrder/@ViewBag.AddMethod" method="post" class="d-none">
 		<h4>Add @ViewBag.Title</h4>
 
-		<div class="form-group">
-			<label for="reference">Reference</label>
-			<input type="text" class="form-control" id="reference" name="reference"  value="@ViewBag.DeliveryOrder.Reference"/>
-		</div>
+		<div class="row">
 
-		<div class="form-group">
-			<label for="customer">Customer</label>
-			<select class="form-control" id="customer" name="customer" data-placeholder="Choose a Customer" tabindex="2">
-				<option value="">-</option>
-				@foreach (Customer customer in ViewBag.Customers)
-				{
-					if (customer.ID == ViewBag.DeliveryOrder.Customer)
-					{
-						<option value="@customer.ID" selected>@customer.Name</option>
-					}
-					else
-					{
-						<option value="@customer.ID">@customer.Name</option>
-					}
-				}
-			</select>
-		</div>
-
-		<div class="form-group">
-			<label for="vessel">Vessel</label>
-			<select class="form-control" id="vessel" name="vessel" data-placeholder="Choose a Vessel" tabindex="2">
-				<option value="">-</option>
-				@foreach (Vessel vessel in ViewBag.Vessels)
-				{
-					if (vessel.ID == ViewBag.DeliveryOrder.Vessel)
-					{
-						<option value="@vessel.ID" selected>@vessel.Name</option>
-					}
-					else
-					{
-						<option value="@vessel.ID">@vessel.Name</option>
-					}
-				}
-			</select>
-		</div>
-
-		<div class="form-group">
-			<label for="container">Container</label>
-			<select class="form-control" id="container" name="container" data-placeholder="Choose a Container" tabindex="2">
-				<option value="">-</option>
-				@foreach (Container container in ViewBag.Containers)
-				{
-					if (container.ID == ViewBag.DeliveryOrder.Container)
-					{
-						<option value="@container.ID" selected>@container.Name</option>
-					}
-					else
-					{
-						<option value="@container.ID">@container.Name</option>
-					}
-				}
-			</select>
-		</div>
-
-		<div class="form-group">
-			<label for="weight">Weight</label>
-			<input type="text" class="form-control" id="weight" name="weight" value="@ViewBag.DeliveryOrder.Weight"/>
-		</div>
-
-		<div class="form-group">
-			<label for="arrivalDate">Arrival Date</label>
-			<div class="input-group">
-				<input type="date" class="form-control" id="arrivalDate" name="arrivalDate" value="@ViewBag.DeliveryOrder.ArrivalDate.ToString("yyyy-MM-dd")" />
-				<input type="time" class="form-control" id="arrivalTime" name="arrivalTime" value="@ViewBag.DeliveryOrder.ArrivalDate.ToString("hh:mm")"/>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="wo">Work Order</label>
+					<input type="text" class="form-control" id="wo" name="wo" value="@ViewBag.DeliveryOrder.WO" />
+				</div>
 			</div>
-		</div>
 
-		<button class="btn btn-primary">Add</button>
-		<button class="btn btn-danger" onclick="$('#show-add').removeClass('d-none'); $('#add').addClass('d-none'); return false;">Cancel</button>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="reference">Reference</label>
+					<input type="text" class="form-control" id="reference" name="reference" value="@ViewBag.DeliveryOrder.Reference" />
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="bol">Bill of Landing</label>
+					<input type="text" class="form-control" id="bl" name="bl" value="@ViewBag.DeliveryOrder.BL" />
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="customer">Customer</label>
+					<select class="form-control" id="customer" name="customer" data-placeholder="Choose a Customer" tabindex="2">
+						<option value="">-</option>
+						@foreach (Customer customer in ViewBag.Customers)
+						{
+							if (customer.ID == ViewBag.DeliveryOrder.Customer)
+							{
+								<option value="@customer.ID" selected>@customer.Name</option>
+							}
+							else
+							{
+								<option value="@customer.ID">@customer.Name</option>
+							}
+						}
+					</select>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="vessel">Vessel</label>
+					<select class="form-control" id="vessel" name="vessel" data-placeholder="Choose a Vessel" tabindex="2">
+						<option value="">-</option>
+						@foreach (Vessel vessel in ViewBag.Vessels)
+						{
+							if (vessel.ID == ViewBag.DeliveryOrder.Vessel)
+							{
+								<option value="@vessel.ID" selected>@vessel.Name</option>
+							}
+							else
+							{
+								<option value="@vessel.ID">@vessel.Name</option>
+							}
+						}
+					</select>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="container">Container</label>
+					<select class="form-control" id="container" name="container" data-placeholder="Choose a Container" tabindex="2">
+						<option value="">-</option>
+						@foreach (Container container in ViewBag.Containers)
+						{
+							if (container.ID == ViewBag.DeliveryOrder.Container)
+							{
+								<option value="@container.ID" selected>@container.Name</option>
+							}
+							else
+							{
+								<option value="@container.ID">@container.Name</option>
+							}
+						}
+					</select>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="weight">Weight</label>
+					<input type="text" class="form-control" id="weight" name="weight" value="@ViewBag.DeliveryOrder.Weight" />
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="arrivalDate">Arrival Date</label>
+					<div class="input-group">
+						<input type="date" class="form-control" id="arrivalDate" name="arrivalDate" value="@ViewBag.DeliveryOrder.ArrivalDate.ToString("yyyy-MM-dd")" />
+						<input type="time" class="form-control" id="arrivalTime" name="arrivalTime" value="@ViewBag.DeliveryOrder.ArrivalDate.ToString("hh:mm")" />
+					</div>
+				</div>
+			</div>
+
+		</div>
+			<button class="btn btn-primary">Add</button>
+			<button class="btn btn-danger" onclick="$('#show-add').removeClass('d-none'); $('#add').addClass('d-none'); return false;">Cancel</button>
 	</form>
 
 	<!-- Edit form -->
@@ -182,7 +211,7 @@
 				<td>@da.ArrivalDate.ToString()</td>
 				<td>@da.Created.ToString()</td>
 				<td align="center">
-					<button type="button" class="edit-data btn btn-primary" onclick="Edit('@da.ID','@da.Reference','@da.Customer','@da.Vessel','@da.Container','@da.Weight','@da.ArrivalDate.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ssZ")');">
+					<button type="button" class="edit-data btn btn-primary" onclick="Edit('@da.ID', '@da.WO', '@da.Reference','@da.Customer','@da.Vessel','@da.Container','@da.Weight','@da.ArrivalDate.AddDays(1).ToString("yyyy-MM-ddTHH:mm:ssZ")', '@da.Origin', '@da.Destination');">
 						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 							<path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"></path>
 							<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
@@ -209,12 +238,13 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.js"></script>
 
 <script type="text/javascript">
-	function Edit(id, reference, customer, vessel, container, weight, arrivalDate) {
+	function Edit(id, wo, reference, customer, vessel, container, weight, arrivalDate) {
 		var date = new Date(arrivalDate);
 		$("#edit").removeClass("d-none");
 		$("#add").addClass("d-none");
 		$("#show-add").addClass("d-none");
 		$("#id").val(id);
+		$("#wo").val(wo);
 		$("#edit #reference").val(reference);
 		$("#edit #customer").val(customer).trigger('change');
 		$("#edit #vessel").val(vessel).trigger('change');

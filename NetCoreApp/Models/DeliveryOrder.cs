@@ -11,6 +11,7 @@ namespace NetCoreApp.Models
 	{
 
 		public Guid ID { get; set; }
+		public string WO { get; set; }
 		public string Reference { get; set; }
 		public Guid Customer { get; set; }
 		public Guid Vessel { get; set; }
@@ -18,6 +19,8 @@ namespace NetCoreApp.Models
 		public string BL { get; set; }
 		public string Weight { get; set; }
 		public DateTime ArrivalDate { get; set; }
+		public string Origin { get; set; }
+		public string Destination { get; set; }
 		public DateTime Created { get; set; }
 		
 	}

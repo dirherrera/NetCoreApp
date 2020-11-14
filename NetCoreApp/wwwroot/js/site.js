@@ -24,3 +24,10 @@ Date.prototype.timeFormat = function () {
 Number.prototype.XX = function () {
 	return (this >= 0 && this < 10) ? '0' + this : ''+this;
 }
+
+$(function () {
+	$(".form-group").each(function (i, e) {
+		var t = $("label",e).text();
+		$("input[type=text]",e).attr("placeholder", t);
+	});
+});

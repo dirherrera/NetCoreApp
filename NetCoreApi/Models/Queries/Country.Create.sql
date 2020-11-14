@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Country] (
+    [ID]   UNIQUEIDENTIFIER DEFAULT (newid()) NOT NULL,
+    [Name] VARCHAR (50)     NOT NULL,
+    PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

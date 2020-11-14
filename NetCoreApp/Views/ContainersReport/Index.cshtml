@@ -1,7 +1,106 @@
 ﻿@{
+	//Layout = "~/Views/Shared/_LayoutReport.cshtml";
 	ViewData["Title"] = "DeliveryOrders";
 }
 
-<div class="">
-	<div></div>
-</div>
+<table id="report" class="table table-striped" style="font-size: small;">
+	<thead class="thead-dark text-nowrap">
+		<tr>
+			<th>No.</th>
+			<th>WO</th>
+			<th>Port of Arrival</th>
+			<th>Vessel line/ Container owner</th>
+			<th>Export Return Port</th>
+			<th>Vessel Line Name</th>
+			<th>Customer 1/ Billing Party</th>
+			<th>Destination</th>
+			<th>Container #</th>
+			<th>Size</th>
+			<th>OBL/Booking #</th>
+			<th>Pier Pass</th>
+			<th>Customer Reference</th>
+			<th>Weight</th>
+			<th>T&E</th>
+			<th>Status</th>
+			<th>Order Received Date</th>
+			<th>Vessel Arrival Date</th>
+			<th>Available Date</th>
+			<th>Last Free Day/Cut off Date</th>
+			<th>Customer Appt Date & Time</th>
+			<th>Terminal Pick Up Date</th>
+			<th>CXT US Yard Arrival Date</th>
+			<th>Crossing Date</th>
+			<th>Customer Delivery Date</th>
+			<th>Customer E/L Notification Date</th>
+			<th>Pick Up Date from Customer</th>
+			<th>Perdiem Last Free Day</th>
+			<th>Termination Date</th>
+			<th>Location</th>
+			<th>Invoice #</th>
+			<th>Arrival Date</th>
+			<th>Export Date</th>
+		</tr>
+	</thead>
+	<tbody>
+		@*@{ int i = 1;}
+		@foreach (ContainerReport report in ViewBag.Report)
+		{
+			<tr>
+				<td>
+					@i
+					@{i++;
+					}
+				</td>
+				<td>@report.WO</td>
+				<td>@report.PortOfArrival</td>
+				<td>@report.VesselLineContainerOwner</td>
+				<td>@report.ExportReturnPort</td>
+				<td>@report.VesselLineName</td>
+				<td>@report.Customer1BillingParty</td>
+				<td>@report.Destination</td>
+				<td>@report.ContainerNo</td>
+				<td>@report.Size</td>
+				<td>@report.OBLBooking</td>
+				<td>@report.PierPass</td>
+				<td>@report.CustomerReference</td>
+				<td>@report.Weight</td>
+				<td>@report.TE</td>
+				<td>@report.Status</td>
+				<td>@report.OrderReceivedDate</td>
+				<td>@report.VesselArrivalDate</td>
+				<td>@report.AvailableDate</td>
+				<td>@report.LastFreeDat</td>
+				<td>@report.CustomerApptDate</td>
+				<td>@report.TerminalPickUpDate</td>
+				<td>@report.CXTUSYardArrivalDate</td>
+				<td>@report.CrossingDate</td>
+				<td>@report.CustomerDeliveryDate</td>
+				<td>@report.CustomerNotificationDate</td>
+				<td>@report.CustomerPickUpDate</td>
+				<td>@report.PerdiemLastFreeDay</td>
+				<td>@report.TerminationDate</td>
+				<td>@report.Location</td>
+				<td>@report.Invoice</td>
+				<td>@report.ArrivalDate</td>
+				<td>@report.ExportDate</td>
+			</tr>
+		}*@
+	</tbody>
+</table>
+<link type="text/css" rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+<link type="text/css" rel="stylesheet" href="//cdn.datatables.net/fixedcolumns/3.3.2/css/fixedColumns.dataTables.min.css" />
+<script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="//cdn.datatables.net/fixedcolumns/3.3.2/js/dataTables.fixedColumns.min.js"></script>
+<script type="text/javascript" src="//editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$('#report').DataTable({
+			scrollY: "560px",
+			scrollX: true,
+			fixedColumns: {
+				leftColumns: 2
+			},
+			ajax: "ContainerReport/Report"
+		});
+	});
+</script>

@@ -7,7 +7,7 @@ namespace NetCoreApp.Controllers
 {
 	public class CityController : Microsoft.AspNetCore.Mvc.Controller
 	{
-
+		
 		public IActionResult Index()
 		{
 			if (!Credential.IsLoggedIn(HttpContext))

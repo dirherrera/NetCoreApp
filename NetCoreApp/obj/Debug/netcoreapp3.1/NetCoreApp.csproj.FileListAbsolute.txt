@@ -1189,3 +1189,4 @@ C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\Country\Index.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\State\Index.cshtml.g.cs
 C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\CustomerRecord\Index.cshtml.g.cs
+C:\Users\Programador 2\Documents\David Ramos\Poyectos\NetCoreApp\NetCoreApp\obj\Debug\netcoreapp3.1\Razor\Views\ContainersReport\Index.cshtml.g.cs

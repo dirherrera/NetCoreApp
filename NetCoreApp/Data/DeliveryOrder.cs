@@ -23,17 +23,24 @@ namespace NetCoreApp.Models
 			return DataTableAdapter.Get<DeliveryOrder>(table)[0];
 		}
 
-		public static void Insert(string reference, Guid customer, Guid vessel, Guid container, string weight, string arrivalDate)
+		public static List<DeliveryOrder> Filter()
 		{
-			string query = $"Insert Into [DeliveryOrder] Values (default, '{reference}', '{customer}', '{vessel}', '{container}', '{weight}'," +
-				$"'{arrivalDate}', GETDATE())";
+			string query = $"Select * From [DeliveryOrder] Where ";
+			DataTable table = DataAccess.Fill(query);
+			return DataTableAdapter.Get<DeliveryOrder>(table);
+		}
+
+		public static void Insert(string wo, string reference, Guid customer, Guid vessel, Guid container, string weight, string arrivalDate, string origin, string destination)
+		{
+			string query = $"Insert Into [DeliveryOrder] Values (default, '{wo}', '{reference}', '{customer}', '{vessel}', '{container}', '{weight}'," +
+				$"'{arrivalDate}', '{origin}', '{destination}', GETDATE())";
 			DataAccess.Exec(query);
 		}
 
-		public static void Edit(string id, string reference, Guid customer, Guid vessel, Guid container, string weight, string arrivalDate)
+		public static void Edit(string id, string wo, string reference, Guid customer, Guid vessel, Guid container, string weight, string arrivalDate, string origin, string destination)
 		{
-			string query = $"Update [DeliveryOrder] Set Reference = '{reference}', Customer = '{customer}', Vessel = '{vessel}'," +
-				$" Container = '{container}', Weight = '{weight}', ArrivalDate = '{arrivalDate}' Where ID = '{id}'";
+			string query = $"Update [DeliveryOrder] Set WO = '{wo}', Reference = '{reference}', Customer = '{customer}', Vessel = '{vessel}', Container = '{container}', " +
+				$"Weight = '{weight}', ArrivalDate = '{arrivalDate}', Origin = '{origin}', Destination = '{destination}'  Where ID = '{id}'";
 			DataAccess.Exec(query);
 		}
 
