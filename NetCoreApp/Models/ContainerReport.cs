@@ -27,7 +27,7 @@ namespace NetCoreApp.Models
 		public string OrderReceivedDate { get; set; }
 		public string VesselArrivalDate { get; set; }
 		public string AvailableDate { get; set; }
-		public string LastFreeDat { get; set; }
+		public string LastFreeDate { get; set; }
 		public string CustomerApptDate { get; set; }
 		public string TerminalPickUpDate { get; set; }
 		public string CXTUSYardArrivalDate { get; set; }
@@ -39,9 +39,10 @@ namespace NetCoreApp.Models
 		public string TerminationDate { get; set; }
 		public string Location { get; set; }
 		public string Invoice { get; set; }
-		public string ArrivalDate { get; set; }
+		public DateTime ArrivalDate { get; set; }
 		public string ExportDate { get; set; }
-
+		public DateTime Created { get; set; }
+		public DateTime Modified { get; set; }
 
 	}
 }

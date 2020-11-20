@@ -13,5 +13,6 @@ namespace NetCoreApp.Models
 		public int recordsFiltered { get; set; }
 		public object data { get; set; }
 
+
 	}
 }
