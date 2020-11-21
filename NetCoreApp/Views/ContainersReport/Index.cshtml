@@ -12,7 +12,7 @@
 			<th>Vessel line/<br />Container owner</th>
 			<th>Export Return Port</th>
 			<th>Vessel Line Name</th>
-			<th>Customer 1/ Billing Party</th>
+			<th>Customer 1/<br /> Billing Party</th>
 			<th>Destination</th>
 			<th>Container #</th>
 			<th>Size</th>
@@ -25,15 +25,15 @@
 			<th>Order Received Date</th>
 			<th>Vessel Arrival Date</th>
 			<th>Available Date</th>
-			<th>Last Free Day/Cut off Date</th>
-			<th>Customer Appt Date & Time</th>
-			<th>Terminal Pick Up Date</th>
-			<th>CXT US Yard Arrival Date</th>
+			<th>Last Free Day/<br />Cut off Date</th>
+			<th>Customer Appt<br />Date & Time</th>
+			<th>Terminal Pick<br />Up Date</th>
+			<th>CXT US Yard<br /> Arrival Date</th>
 			<th>Crossing Date</th>
 			<th>Customer Delivery Date</th>
-			<th>Customer E/L Notification Date</th>
-			<th>Pick Up Date from Customer</th>
-			<th>Perdiem Last Free Day</th>
+			<th>Customer E/L <br />Notification Date</th>
+			<th>Pick Up Date<br />from Customer</th>
+			<th>Perdiem Last<br />Free Day</th>
 			<th>Termination Date</th>
 			<th>Location</th>
 			<th>Invoice #</th>
@@ -51,6 +51,7 @@
 <script type="text/javascript" src="//editor.datatables.net/extensions/Editor/js/dataTables.editor.min.js"></script>
 <script>
 	$(document).ready(function () {
+
 		var report = $('#report').DataTable({
 			scrollY: "560px",
 			scrollX: true,
@@ -62,23 +63,25 @@
 
 		$("#report tbody").on("click", "tr", function (e) {
 			var td = e.target;
-			var rep = report;
 			var i = $(td).index();
+			var rep = report;
 			var row = this;
-			var data = report.row(this).data();
-			var value = $(td).text().trim();
-			var input = $(`<input type="text" value="${value}" class="temp-edit">`);
-			$(td).html('').append(input);
-			$(input).blur(function () {
-				$(td).text($(this).val());
-				$(this).remove();
-				data[i] = $(input).val();
-				rep.row(row).data(data).draw();
-				data = rep.row(row).data();
-				Edit(rep.row(row).data());
-				console.log(rep.row(row).data());
-			});
-			$(input).focus();
+			var block = [0,1,5,6,7,8];
+			if (!block.includes(i)) {
+				var data = report.row(this).data();
+				var value = $(td).text();
+				var input = $(`<input type="text" value="${value.trim()}" class="temp-edit">`);
+				$(td).html('').append(input);
+				$(input).blur(function () {
+					$(td).text($(this).val().trim());
+					$(this).remove();
+					data[i] = $(input).val();
+					rep.row(row).data(data).draw();
+					data = rep.row(row).data();
+					Edit(rep.row(row).data());
+				});
+				$(input).focus();
+			}
 		});
 
 		function Edit(data) {
@@ -118,29 +121,17 @@
 			cr.exportDate = data[32];
 			cr.rowNo = data[0];
 			cr.id = data[33];
-			var json = ajaxJson(cr);
-			console.log(json);
-			//$.ajax({
-			//	url: "api/ContainerReport/Edit",
-			//	type: "post",
-			//	data: ,
-			//	dataType: "json",
-			//	contentType: "application/json;charset=utf8",
-			//	success: function (data) {
-			//		console.log(data);
-			//		console.log(rep);
-			//	}
-			//});
+			$.ajax({
+				url: "api/ContainerReport/Edit",
+				type: "get",
+				data: cr,
+				dataType: "json",
+				contentType: "application/json;charset=utf-8",
+				success: function (data) {
+					rep.row(data.rowNo).data(data).draw();
+				}
+			});
 		}
 
-		function ajaxJson(obj) {
-			var json = "";
-			var u = "";
-			for (x in obj) {
-				json += `"${u}${x}" = "${obj[x]}"`;
-				u = ",";
-			}
-			return `{${json}}`
-		}
 	});
 </script>

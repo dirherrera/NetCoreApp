@@ -43,7 +43,7 @@ namespace NetCoreApp.Models
 				$"TerminalPickUpDate = '{terminalPickupDate}', CXTUSYardArrivalDate = '{cxtusYardArrivalDate}', CrossingDate = '{crossingDate}', " +
 				$"CustomerDeliveryDate = '{customerDeliveryDate}', CustomerNotificationDate = '{customerNotificationDate}', CustomerPickUpDate = '{customerPickupDate}', " +
 				$"PerdiemLastFreeDay = '{perdiemLastFreeDay}', TerminationDate = '{terminationDate}', Location = '{location}', Invoice = '{invoice}', " +
-				$"ArrivalDate = '{arrivalDate}', ExportDate = '{exportDate}', Modified" +
+				$"ArrivalDate = '{arrivalDate}', ExportDate = '{exportDate}', Modified = GETDATE() " +
 				$"WHERE ID = '{id}'";
 			DataAccess.Exec(query);
 		}

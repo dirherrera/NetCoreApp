@@ -27,7 +27,7 @@ namespace NetCoreApp.API
 			return result;
 		}
 
-		[HttpPost("Edit")]
+		[HttpGet("Edit")]
 		public ActionResult<string> Edit(string id, string wo, string portOfArrival, string vesselLineContainerOwner, string exportReturnPort, string vesselLineName,
 			string customer1BillingParty, string destination, string containerNo, string size, string oblBooking, string pierPass, string customerReference,
 			string weight, string te, string status, string orderReceivedDate, string vesselArrivalDate, string availableDate, string lastFreeDate,
@@ -38,10 +38,10 @@ namespace NetCoreApp.API
 			if (!Credential.IsLoggedIn(HttpContext))
 				return "";
 
-			//ContainerReport.Update(id, wo, portOfArrival, vesselLineContainerOwner, exportReturnPort, vesselLineName, customer1BillingParty, destination, containerNo, size, oblBooking,
-			//	pierPass, customerReference, weight, te, status, orderReceivedDate, vesselArrivalDate, availableDate, lastFreeDate, customerApptDate, terminalPickupDate,
-			//	cxtusYardArrivalDate, crossingDate, customerDeliveryDate, customerNotificationDate, customerPickupDate, perdiemLastFreeDay, terminationDate, location, invoice,
-			//	arrivalDate, exportDate);
+			ContainerReport.Update(id, wo, portOfArrival, vesselLineContainerOwner, exportReturnPort, vesselLineName, customer1BillingParty, destination, containerNo, size, oblBooking,
+				pierPass, customerReference, weight, te, status, orderReceivedDate, vesselArrivalDate, availableDate, lastFreeDate, customerApptDate, terminalPickupDate,
+				cxtusYardArrivalDate, crossingDate, customerDeliveryDate, customerNotificationDate, customerPickupDate, perdiemLastFreeDay, terminationDate, location, invoice,
+				arrivalDate, exportDate);
 
 			ContainerReport containerReport = ContainerReport.Get(id);
 
