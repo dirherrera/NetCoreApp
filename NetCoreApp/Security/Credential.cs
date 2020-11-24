@@ -62,7 +62,7 @@ namespace NetCoreApp.Security
 				List<User> users = DataTableAdapter.Get<User>(table);
 				valid = (users.Count > 0);
 			}
-			return true;
+			return valid;
 		}
 
 		public static bool HasPrivileges(HttpContext httpContext)
