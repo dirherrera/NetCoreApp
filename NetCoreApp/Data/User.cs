@@ -18,7 +18,7 @@ namespace NetCoreApp.Models
 			Users = DataTableAdapter.Get<User>(table);
 			return Users;
 		}
-
+		 
 		public static User Login(string Username, string Password)
 		{
 			User user = new User();
@@ -59,6 +59,24 @@ namespace NetCoreApp.Models
 		{
 			string query = $"SELECT Count(*) FROM [User] WHERE Username = '{username}'";
 			return (DataAccess.Find(query) > 0);
+		}
+
+		public static List<Customer> GetCustomerNotAssign()
+		{
+			List<Customer> Customers = new List<Customer>();
+			string query = $"Select [ID],[Name] From Customer WHERE ID NOT IN (Select Distinct [Customer] From UserCustomer)";
+			DataTable table = DataAccess.Fill(query);
+			Customers = DataTableAdapter.Get<Customer>(table);
+			return Customers;
+		}
+
+		public static List<Customer> GetCustomerAssign(string id)
+		{
+			List<Customer> customers = new List<Customer>();
+			string query = $"Select [ID],[Name] From Customer WHERE ID IN (Select [Customer] From UserCustomer Where User = '{id}')";
+			DataTable table = DataAccess.Fill(query);
+			customers = DataTableAdapter.Get<Customer>(table);
+			return customers;
 		}
 
 	}

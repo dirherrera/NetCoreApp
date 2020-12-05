@@ -50,5 +50,24 @@ namespace NetCoreApp.API
 			return System.Text.Json.JsonSerializer.Serialize(row);
 		}
 
+		[HttpGet("GetUserCustomer")]
+		public ActionResult<string> GetUserCustomer(string id)
+		{
+			if (!Credential.IsLoggedIn(HttpContext))
+				return "";
+
+			List<Customer> unassign = NetCoreApp.Models.User.GetCustomerNotAssign();
+			List<Customer> assign = NetCoreApp.Models.User.GetCustomerAssign(id);
+
+			AssignedCustomer ac = new AssignedCustomer();
+			ac.assign = assign;
+			ac.unassign = unassign;
+
+			DataTablesJson json = new DataTablesJson();
+			json.data = ac;
+			string result = System.Text.Json.JsonSerializer.Serialize(json);
+			return result;
+		}
+
 	}
 }

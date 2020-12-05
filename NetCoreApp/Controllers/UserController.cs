@@ -64,5 +64,16 @@ namespace NetCoreApp.Controllers
 			return RedirectToAction("Index", "User", null);
 		}
 
+		public IActionResult UserCustomer(Guid user)
+		{
+			if (!Credential.IsLoggedIn(HttpContext))
+				return RedirectToAction("Index", "Home", null);
+
+			ViewBag.Customers = NetCoreApp.Models.User.GetCustomerNotAssign();
+			ViewBag.User = user;
+
+			return View("UserCustomer");
+		}
+
 	}
 }
